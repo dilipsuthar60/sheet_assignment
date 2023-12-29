@@ -5,7 +5,6 @@ const CustomDataGrid = ({ tableId, rows, columns, data, backgroundImage }) => {
   const [selectedCells, setSelectedCells] = useState([]);
   const [tooltipContent, setTooltipContent] = useState("");
   const [currentActiveCell, setCurrentActiveCell] = useState(null);
-  console.log(backgroundImage);
   const generateCellId = (row, column) => {
     if (row < 10) {
       row = `0${row}`;
@@ -16,7 +15,14 @@ const CustomDataGrid = ({ tableId, rows, columns, data, backgroundImage }) => {
   const handleCellClick = (row, column) => {
     const cellId = generateCellId(row, column);
     setCurrentActiveCell(cellId);
-    setSelectedCells([...selectedCells, cellId]);
+    let newSelectedCells = selectedCells;
+    newSelectedCells.push(cellId);
+    console.log(
+      "🚀 ~ file: CustomDataGrid.js:20 ~ handleCellClick ~ newSelectedCells:",
+      newSelectedCells
+    );
+    setSelectedCells(newSelectedCells);
+    console.log("seleted return array ids", selectedCells);
   };
 
   const handleCellMouseOver = (row, column) => {
