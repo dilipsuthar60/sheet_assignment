@@ -1,4 +1,4 @@
-import CustomDataGrid from './CustomDataGrid';
+import CustomDataGrid from './component/CustomDataGrid';
 import './App.css';
 import data from './data.js'
 
@@ -16,7 +16,6 @@ function App() {
   const rows = Array.from({ length: 100 }, (_, i) => i + 1);
   const columns = Array.from({ length: 56 }, (_, i) => convertToTitle(i + 1));
   const backgroundImage = '';
-  console.log(data)
   return <CustomDataGrid tableId={tableId} rows={rows} columns={columns} data={data} backgroundImage={backgroundImage} />;
 }
 

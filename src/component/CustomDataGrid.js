@@ -1,18 +1,18 @@
 import React, { useState, useEffect } from 'react';
-import './App.css';
+import '../App.css';
 
 const CustomDataGrid = ({ tableId, rows, columns, data, backgroundImage }) => {
     const [selectedCells, setSelectedCells] = useState([]);
     const [tooltipContent, setTooltipContent] = useState('');
 
     const generateCellId = (row, column) => {
-        if(row<10){ row=`0${row}`}
+        if (row < 10) { row = `0${row}` }
         return `${tableId}#${row}${column}`;
     };
 
     const handleCellClick = (row, column) => {
         const cellId = generateCellId(row, column);
-        
+
         const cellData = data.find((item) => item.id === cellId);
     };
 
@@ -20,7 +20,7 @@ const CustomDataGrid = ({ tableId, rows, columns, data, backgroundImage }) => {
         const cellId = generateCellId(row, column);
         console.log("🚀 ~ file: CustomDataGrid.js:21 ~ handleCellMouseOver ~ cellId:", cellId)
         const cellData = data.find((item) => item.id === cellId);
-        if (cellData) {
+        if (cellData && cellData.type === 'S') {
             console.log("set cell data", cellData.property)
             setTooltipContent(cellData.property);
 
@@ -64,7 +64,7 @@ const CustomDataGrid = ({ tableId, rows, columns, data, backgroundImage }) => {
                                         onMouseOver={() => handleCellMouseOver(row, column)}
                                     >
                                         {cellData.content || ''}
-                                        {tooltipContent&&<span className="tooltip-text top">{tooltipContent}</span>}
+                                        {tooltipContent && <span className="tooltip-text top">{tooltipContent}</span>}
                                     </div>
                                 </>
                             );
