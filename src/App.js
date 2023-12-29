@@ -10,7 +10,6 @@ function App() {
       ans = String.fromCharCode(code + 65) + ans
       columnNumber = (columnNumber - code) / 26
     }
-
     return ans
   }
   const tableId = 'A';
