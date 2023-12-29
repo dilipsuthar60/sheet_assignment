@@ -5,7 +5,7 @@ const CustomDataGrid = ({ tableId, rows, columns, data, backgroundImage }) => {
   const [selectedCells, setSelectedCells] = useState([]);
   const [tooltipContent, setTooltipContent] = useState("");
   const [currentActiveCell, setCurrentActiveCell] = useState(null);
-
+  console.log(backgroundImage);
   const generateCellId = (row, column) => {
     if (row < 10) {
       row = `0${row}`;
@@ -32,7 +32,12 @@ const CustomDataGrid = ({ tableId, rows, columns, data, backgroundImage }) => {
   useEffect(() => {}, []);
 
   return (
-    <div className="custom-data-grid">
+    <div
+      className={`custom-data-grid ${
+        backgroundImage ? "background-image" : ""
+      }`}
+      style={{ backgroundImage: `url(${backgroundImage})` }}
+    >
       <div className="table-header">
         <div className="table-header-cell table-id">
           {currentActiveCell ? currentActiveCell : tableId}
@@ -52,8 +57,7 @@ const CustomDataGrid = ({ tableId, rows, columns, data, backgroundImage }) => {
               const cellData = data.find((item) => item.id === cellId) || {};
               const isSelected = selectedCells.includes(cellId);
               const cellStyle = {
-                backgroundColor:
-                  cellData.color || (isSelected ? "#ADD8E6" : "#FFFFFF"),
+                backgroundColor: cellData.color || "",
                 cursor: "pointer",
               };
 
