@@ -1,13 +1,97 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.custom-data-grid {
+  position: relative;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.table-header {
+  display: flex;
+}
+
+.table-header-cell {
+  min-width: 40px;
+  padding: 8px;
+  text-align: center;
+  border: 1px solid #ddd;
+  background-color: #f2f2f2;
+}
+
+.table-header-cell.row-number {
+  min-width: 40px;
+  position: relative;
+}
+
+.table-body {
+  display: flex;
+  flex-direction: column;
+}
+
+.table-row {
+  display: flex;
+}
+
+.table-cell {
+  min-width: 40px;
+  padding: 8px;
+  text-align: center;
+  border: 1px solid #ddd;
+}
+
+.table-cell.selected {
+  background-color: #add8e6;
+}
+
+.tooltip {
+  position: absolute;
+  background-color: #ffffff;
+  color: #0f0f0f;
+  padding: 8px;
+  z-index: 5;
+}
+
+.background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  pointer-events: none;
+}
+
+.tooltip-text {
+  visibility: hidden;
+  position: absolute;
+  z-index: 1;
+  color: white;
+  background-color: #192733;
+  padding: 5px;
+}
+
+.hover-text:hover .tooltip-text {
+  visibility: visible;
+}
+
+.top {
+  top: -40px;
+  left: -50%;
+}
+
+.bottom {
+  top: 25px;
+  left: -50%;
+}
+
+.left {
+  top: -8px;
+  right: 120%;
+}
+
+.right {
+  top: -8px;
+  left: 120%;
+}
+
+.hover-text {
+  position: relative;
+  display: inline-block;
+  text-align: center;
 }
