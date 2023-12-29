@@ -5,7 +5,7 @@ const data=[
         "color": "#3D85C6",
         "content": "hwllow",
         "highlight": "No",
-        "property": ""
+        "property": "propertydeeeeeeeeeeeeeeee"
     },
     {
         "id": "A#01B",

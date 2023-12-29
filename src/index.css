@@ -62,8 +62,9 @@
   position: absolute;
   z-index: 1;
   color: white;
-  background-color: #192733;
-  padding: 5px;
+  background-color: #4b4b4b;
+  padding: 10px;
+  border-radius: 5px;
 }
 
 .hover-text:hover .tooltip-text {
