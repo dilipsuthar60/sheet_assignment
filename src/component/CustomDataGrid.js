@@ -4,6 +4,7 @@ import '../App.css';
 const CustomDataGrid = ({ tableId, rows, columns, data, backgroundImage }) => {
     const [selectedCells, setSelectedCells] = useState([]);
     const [tooltipContent, setTooltipContent] = useState('');
+    const [currentActiveCell,setCurrentActiveCell]=useState(null)
 
     const generateCellId = (row, column) => {
         if (row < 10) { row = `0${row}` }
@@ -12,13 +13,13 @@ const CustomDataGrid = ({ tableId, rows, columns, data, backgroundImage }) => {
 
     const handleCellClick = (row, column) => {
         const cellId = generateCellId(row, column);
-
-        const cellData = data.find((item) => item.id === cellId);
+        setCurrentActiveCell(cellId)
+        console.log("🚀 ~ file: CustomDataGrid.js:15 ~ handleCellClick ~ cellId:", cellId)
+        // const cellData = data.find((item) => item.id === cellId);
     };
 
     const handleCellMouseOver = (row, column) => {
         const cellId = generateCellId(row, column);
-        console.log("🚀 ~ file: CustomDataGrid.js:21 ~ handleCellMouseOver ~ cellId:", cellId)
         const cellData = data.find((item) => item.id === cellId);
         if (cellData && cellData.type === 'S') {
             console.log("set cell data", cellData.property)
@@ -35,7 +36,7 @@ const CustomDataGrid = ({ tableId, rows, columns, data, backgroundImage }) => {
     return (
         <div className="custom-data-grid">
             <div className="table-header">
-                <div className="table-header-cell table-id">{tableId}</div>
+                <div className="table-header-cell table-id">{currentActiveCell?currentActiveCell:tableId}</div>
                 {columns.map((column) => (
                     <div key={column} className="table-header-cell">
                         {column}
@@ -57,7 +58,7 @@ const CustomDataGrid = ({ tableId, rows, columns, data, backgroundImage }) => {
                             return (
                                 <>
                                     <div
-                                        key={column}
+                                        key={column+row}
                                         className={`hover-text table-cell ${isSelected ? 'selected' : ''}`}
                                         style={cellStyle}
                                         onClick={() => handleCellClick(row, column)}
