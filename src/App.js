@@ -13,9 +13,6 @@ function App() {
     return ans;
   };
   const tableId = "A";
-  if (!data.length) {
-    return;
-  }
   const rows = Array.from({ length: 50 }, (_, i) => i + 1);
   const columns = Array.from({ length: 80 }, (_, i) => convertToTitle(i + 1));
   // const backgroundImage =

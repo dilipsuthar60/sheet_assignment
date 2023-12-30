@@ -17,10 +17,6 @@ const CustomDataGrid = ({ tableId, rows, columns, data, backgroundImage }) => {
     setCurrentActiveCell(cellId);
     let newSelectedCells = selectedCells;
     newSelectedCells.push(cellId);
-    console.log(
-      "🚀 ~ file: CustomDataGrid.js:20 ~ handleCellClick ~ newSelectedCells:",
-      newSelectedCells
-    );
     setSelectedCells(newSelectedCells);
     console.log("seleted return array ids", selectedCells);
   };
