@@ -14,11 +14,14 @@ const CustomDataGrid = ({ tableId, rows, columns, data, backgroundImage }) => {
 
   const handleCellClick = (row, column) => {
     const cellId = generateCellId(row, column);
-    setCurrentActiveCell(cellId);
-    let newSelectedCells = selectedCells;
-    newSelectedCells.push(cellId);
-    setSelectedCells(newSelectedCells);
-    console.log("seleted return array ids", selectedCells);
+    const cellData = data.find((item) => item.id === cellId);
+    if (cellData && cellData.type === "S") {
+      setCurrentActiveCell(cellId);
+      let newSelectedCells = selectedCells;
+      newSelectedCells.push(cellId);
+      setSelectedCells(newSelectedCells);
+      console.log("seleted return array ids", selectedCells);
+    }
   };
 
   const handleCellMouseOver = (row, column) => {

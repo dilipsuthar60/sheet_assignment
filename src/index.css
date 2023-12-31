@@ -42,7 +42,7 @@ body{
 }
 
 .table-cell.selected {
-  background-color: #305764;
+  background-color: #305764 !important;
 }
 
 .tooltip {
