@@ -38,11 +38,12 @@ body{
   min-width: 40px;
   padding: 8px;
   text-align: center;
-  border: 1.8px solid #ddd;
+  border: 2px solid #ddd;
 }
 
 .table-cell.selected {
-  border: 1.8px solid #1A73E8 !important;
+  border: 2px solid #0b57d0 !important;
+  padding: 7px !important;
 }
 
 .tooltip {

@@ -24,7 +24,6 @@ const CustomDataGrid = ({ tableId, rows, columns, data, backgroundImage }) => {
             console.log("seleted return array ids", selectedCells);
         }
         else {
-            console.log(cellId)
             let newSelectedCells = selectedCells.filter((item) => item !== cellId)            
             setSelectedCells(newSelectedCells);
         }
