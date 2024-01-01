@@ -16,7 +16,6 @@ const CustomDataGrid = ({ tableId, rows, columns, data, backgroundImage }) => {
         const cellId = generateCellId(row, column);
         const cellData = data.find((item) => item.id === cellId);
         const isSelected = selectedCells.includes(cellId);
-        console.log("🚀 ~ file: CustomDataGrid.js:19 ~ handleCellClick ~ isSelected:", isSelected)
         if (!isSelected && cellData && cellData.type === "S") {
             setCurrentActiveCell(cellId);
             let newSelectedCells = selectedCells;
@@ -26,9 +25,7 @@ const CustomDataGrid = ({ tableId, rows, columns, data, backgroundImage }) => {
         }
         else {
             console.log(cellId)
-            let newSelectedCells = selectedCells.filter((item) => item !== cellId)
-            console.log("🚀 ~ file: CustomDataGrid.js:29 ~ handleCellClick ~ newSelectedCells:", newSelectedCells)
-            
+            let newSelectedCells = selectedCells.filter((item) => item !== cellId)            
             setSelectedCells(newSelectedCells);
         }
     };
