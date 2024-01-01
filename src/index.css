@@ -17,7 +17,7 @@ body{
   min-width: 40px;
   padding: 8px;
   text-align: center;
-  border: 1px solid #ddd;
+  border: 2px solid #ddd;
 }
 
 .table-header-cell.row-number {
@@ -38,11 +38,11 @@ body{
   min-width: 40px;
   padding: 8px;
   text-align: center;
-  border: 1px solid #ddd;
+  border: 1.8px solid #ddd;
 }
 
 .table-cell.selected {
-  background-color: #305764 !important;
+  border: 1.8px solid #1A73E8 !important;
 }
 
 .tooltip {
