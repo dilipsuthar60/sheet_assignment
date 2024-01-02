@@ -21,7 +21,7 @@ const data=[
         "color": "#8E7CC3",
         "content": null,
         "highlight": "No",
-        "property": ""
+        "property": "jhkj"
     },
     {
         "id": "A#01D",

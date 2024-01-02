@@ -15,17 +15,16 @@ const CustomDataGrid = ({ tableId, rows, columns, data, backgroundImage }) => {
     const handleCellClick = (row, column) => {
         const cellId = generateCellId(row, column);
         const cellData = data.find((item) => item.id === cellId);
-        const isSelected = selectedCells.includes(cellId);
-        if (!isSelected && cellData && cellData.type === "S") {
-            setCurrentActiveCell(cellId);
-            let newSelectedCells = selectedCells;
-            newSelectedCells.push(cellId);
-            setSelectedCells(newSelectedCells);
-            console.log("seleted return array ids", selectedCells);
+        setCurrentActiveCell(cellId);
+        const present = selectedCells.includes(cellId);
+        if (!present && cellData && cellData.type === "S") {
+            setSelectedCells((oldCellIds)=>[...oldCellIds,cellId]);
+            console.log("selected cells ids",[...selectedCells,cellId])
         }
         else {
-            let newSelectedCells = selectedCells.filter((item) => item !== cellId)            
+            let newSelectedCells = selectedCells.filter((item) => item !== cellId)        
             setSelectedCells(newSelectedCells);
+            console.log("selected cells ids",newSelectedCells)
         }
     };
 
@@ -73,7 +72,7 @@ const CustomDataGrid = ({ tableId, rows, columns, data, backgroundImage }) => {
                             return (
                                 <>
                                     <div
-                                        key={column + row}
+                                        key={cellId}
                                         className={`hover-text table-cell ${isSelected ? "selected" : ""
                                             }`}
                                         style={cellStyle}
