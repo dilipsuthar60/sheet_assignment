@@ -6,7 +6,6 @@ body{
 .custom-data-grid {
   position: relative;
   width: 100%;
-  /* background-image: url('https://images.unsplash.com/photo-1682687982046-e5e46906bc6e?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); */
 }
 
 .table-header {
@@ -17,7 +16,7 @@ body{
   min-width: 40px;
   padding: 8px;
   text-align: center;
-  border: 2px solid #ddd;
+  border: 2px solid rgb(212, 212, 212);
 }
 
 .table-header-cell.row-number {
@@ -35,10 +34,8 @@ body{
 }
 
 .table-cell {
-  min-width: 40px;
-  padding: 8px;
   text-align: center;
-  border: 2px solid #ddd;
+  border: 2px solid rgb(212, 212, 212);
 }
 
 .table-cell.selected {
