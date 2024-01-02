@@ -1,5 +1,5 @@
 import React from "react";
-import data from "../data.js";
+import jsonData from "../data.js";
 import CustomDataGrid from "./CustomDataGrid.js";
 
 const Grid = () => {
@@ -15,17 +15,17 @@ const Grid = () => {
   const tableId = "A";
   const rows = Array.from({ length: 50 }, (_, i) => i + 1);
   const columns = Array.from({ length: 80 }, (_, i) => convertToTitle(i + 1));
-  const width = "40px";
-  const height = "30px";
-  const backgroundImage =
-    "https://images.unsplash.com/photo-1682687982046-e5e46906bc6e?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
-  // const backgroundImage = "";
+  const width = "60px";
+  const height = "40px";
+  // const backgroundImage =
+  // "https://images.unsplash.com/photo-1682687982046-e5e46906bc6e?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
+  const backgroundImage = "";
   return (
     <CustomDataGrid
       tableId={tableId}
       rows={rows}
       columns={columns}
-      data={data}
+      jsonData={jsonData}
       backgroundImage={backgroundImage}
       width={width}
       height={height}

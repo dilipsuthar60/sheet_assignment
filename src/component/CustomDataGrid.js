@@ -5,7 +5,7 @@ const CustomDataGrid = ({
   tableId,
   rows,
   columns,
-  data,
+  jsonData,
   backgroundImage,
   height,
   width,
@@ -13,6 +13,7 @@ const CustomDataGrid = ({
   const [selectedCells, setSelectedCells] = useState([]);
   const [tooltipContent, setTooltipContent] = useState("");
   const [currentActiveCell, setCurrentActiveCell] = useState(null);
+  const [data, setData] = useState(jsonData);
   const generateCellId = (row, column) => {
     if (row < 10) {
       row = `0${row}`;
@@ -22,7 +23,13 @@ const CustomDataGrid = ({
 
   const handleCellClick = (row, column) => {
     const cellId = generateCellId(row, column);
-    const cellData = data.find((item) => item.id === cellId);
+    const cellData = data.map((item) => {
+      if (item.id == cellId) {
+        return { ...item, content: "hi..." };
+      }
+      return item;
+    });
+    setData(cellData);
     setCurrentActiveCell(cellId);
     const present = selectedCells.includes(cellId);
     if (!present) {
@@ -56,7 +63,7 @@ const CustomDataGrid = ({
     >
       <div className="table-header">
         <div className="table-header-cell table-id">
-          {currentActiveCell ? currentActiveCell : tableId}
+          {currentActiveCell ? currentActiveCell : "$"}
         </div>
         {columns.map((column) => (
           <div key={column} className="table-header-cell">
@@ -77,7 +84,6 @@ const CustomDataGrid = ({
                 cursor: "pointer",
                 minWidth: width,
                 minHeight: height,
-                padding: "8px",
               };
 
               return (

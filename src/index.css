@@ -13,14 +13,18 @@ body{
 }
 
 .table-header-cell {
-  min-width: 40px;
-  padding: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 60px;
+  height: 40px;
   text-align: center;
   border: 2px solid rgb(212, 212, 212);
 }
 
 .table-header-cell.row-number {
-  min-width: 40px;
+  min-width: 60px;
+    height: 40px;
   position: relative;
 }
 
@@ -34,13 +38,11 @@ body{
 }
 
 .table-cell {
-  text-align: center;
   border: 2px solid rgb(212, 212, 212);
 }
 
 .table-cell.selected {
   border: 2px solid #0b57d0 !important;
-/* padding: 7px !important; */
 }
 
 .tooltip {

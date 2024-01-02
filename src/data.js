@@ -1,4 +1,4 @@
-const data = [
+const jsonData = [
   {
     id: "A#01A",
     type: "S",
@@ -1345,4 +1345,4 @@ const data = [
   },
 ];
 
-export default data;
+export default jsonData;
