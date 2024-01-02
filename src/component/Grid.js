@@ -17,8 +17,9 @@ const Grid = () => {
   const columns = Array.from({ length: 80 }, (_, i) => convertToTitle(i + 1));
   const width = "40px";
   const height = "30px";
-  // const backgroundImage ="https://images.unsplash.com/photo-1682687982046-e5e46906bc6e?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
-  const backgroundImage = "";
+  const backgroundImage =
+    "https://images.unsplash.com/photo-1682687982046-e5e46906bc6e?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
+  // const backgroundImage = "";
   return (
     <CustomDataGrid
       tableId={tableId}
