@@ -63,11 +63,18 @@ const CustomDataGrid = ({
       style={{ backgroundImage: `url(${backgroundImage})` }}
     >
       <div className="table-header">
-        <div className="table-header-cell table-id">
+        <div
+          style={{ height: height, width: width }}
+          className="table-header-cell table-id"
+        >
           {currentActiveCell ? currentActiveCell : "$"}
         </div>
         {columns.map((column) => (
-          <div key={column} className="table-header-cell">
+          <div
+            key={column}
+            className="table-header-cell"
+            style={{ height: height, width: width }}
+          >
             {column}
           </div>
         ))}
@@ -75,7 +82,12 @@ const CustomDataGrid = ({
       <div className="table-body">
         {rows.map((row, index) => (
           <div key={row + index} className="table-row">
-            <div className="table-header-cell row-number">{row}</div>
+            <div
+              style={{ height: height, width: width }}
+              className="table-header-cell row-number"
+            >
+              {row}
+            </div>
             {columns.map((column) => {
               const cellId = generateCellId(row, column);
               const cellData = data.find((item) => item.id === cellId) || {};

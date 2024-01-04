@@ -16,15 +16,11 @@ body{
   display: flex;
   justify-content: center;
   align-items: center;
-  min-width: 60px;
-  height: 40px;
   text-align: center;
   border: 2px solid rgb(212, 212, 212);
 }
 
 .table-header-cell.row-number {
-  min-width: 60px;
-    height: 40px;
   position: relative;
 }
 

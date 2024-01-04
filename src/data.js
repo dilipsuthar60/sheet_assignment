@@ -3,7 +3,7 @@ const jsonData = [
     id: "A#01A",
     type: "S",
     color: "#3D85C6",
-    content: "hell",
+    content: "",
     highlight: "No",
     property: "propertydeeeeeeeeeeeeeeee",
   },
