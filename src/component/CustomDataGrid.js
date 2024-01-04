@@ -23,13 +23,14 @@ const CustomDataGrid = ({
 
   const handleCellClick = (row, column) => {
     const cellId = generateCellId(row, column);
-    const cellData = data.map((item) => {
-      if (item.id == cellId) {
-        return { ...item, content: "hi..." };
-      }
-      return item;
-    });
-    setData(cellData);
+    // u can change the json property
+    // const cellData = data.map((item) => {
+    //   if (item.id == cellId) {
+    //     return { ...item, content: "hi..." };
+    //   }
+    //   return item;
+    // });
+    // setData(cellData);
     setCurrentActiveCell(cellId);
     const present = selectedCells.includes(cellId);
     if (!present) {
