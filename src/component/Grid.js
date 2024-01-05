@@ -14,8 +14,8 @@ const Grid = () => {
     return ans;
   };
   const tableId = "A";
-  const rows = Array.from({ length: 15 }, (_, i) => i + 1);
-  const columns = Array.from({ length: 100 }, (_, i) => convertToTitle(i + 1));
+  const rows = Array.from({ length: 100 }, (_, i) => i + 1);
+  const columns = Array.from({ length: 702 }, (_, i) => convertToTitle(i + 1));
   const width = "60px"; // your custum width
   const height = "60px"; // your custum height
   // const backgroundImage =
