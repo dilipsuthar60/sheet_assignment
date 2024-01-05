@@ -56,15 +56,10 @@ const CustomDataGrid = ({
   useEffect(() => {}, []);
 
   return (
-    <div
-      className={`custom-data-grid ${
-        backgroundImage ? "background-image" : ""
-      }`}
-      style={{ backgroundImage: `url(${backgroundImage})` }}
-    >
+    <div className={`custom-data-grid`}>
       <div className="table-header">
         <div
-          style={{ height: height, width: width }}
+          style={{ minHeight: height, minWidth: width }}
           className="table-header-cell table-id"
         >
           {currentActiveCell ? currentActiveCell : "$"}
@@ -73,17 +68,20 @@ const CustomDataGrid = ({
           <div
             key={column}
             className="table-header-cell"
-            style={{ height: height, width: width }}
+            style={{ minHeight: height, minWidth: width }}
           >
             {column}
           </div>
         ))}
       </div>
-      <div className="table-body">
+      <div
+        className={`table-body ${backgroundImage ? "background-image" : ""}`}
+        style={{ backgroundImage: `url(${backgroundImage})` }}
+      >
         {rows.map((row, index) => (
           <div key={row + index} className="table-row">
             <div
-              style={{ height: height, width: width }}
+              style={{ minHeight: height, minWidth: width }}
               className="table-header-cell row-number"
             >
               {row}

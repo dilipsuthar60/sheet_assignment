@@ -49,10 +49,10 @@ body{
 }
 
 .background-image {
-  position: absolute;
-  top: 0;
-  left: 0;
-  background-size: contain;
+  /* position: absolute; */
+  /* background-size: contain; */
+  background-position: center; 
+  height: 100vh;
 }
 
 .tooltip-text {
