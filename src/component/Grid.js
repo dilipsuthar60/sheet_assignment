@@ -1,7 +1,7 @@
 import React from "react";
 import jsonData from "../data.js";
 import CustomDataGrid from "./CustomDataGrid.js";
-import backgroundimg from "../assets/back-grond-1.jpg";
+import backgroundimg from "../assets/back-ground.jpeg";
 
 const Grid = () => {
   const convertToTitle = (columnNumber) => {
