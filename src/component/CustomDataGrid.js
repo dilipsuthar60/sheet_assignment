@@ -9,6 +9,8 @@ const CustomDataGrid = ({
   backgroundImage,
   backgroundHeight,
   backgroundWidth,
+  backgroundPostionWidth,
+  backgroundPostionHeight,
   height,
   width,
 }) => {
@@ -65,7 +67,7 @@ const CustomDataGrid = ({
       style={{
         backgroundImage: `url(${backgroundImage})`,
         backgroundSize: `${backgroundHeight}px  ${backgroundWidth}px`,
-        backgroundPosition: `${width}px  ${height}px`,
+        backgroundPosition: `${backgroundPostionWidth}px  ${backgroundPostionHeight}px`,
       }}
     >
       <div className="table-header">

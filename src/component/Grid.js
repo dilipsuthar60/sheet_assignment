@@ -18,6 +18,8 @@ const Grid = () => {
   const backgroundImage = backgroundimg;
   const backgroundHeight = 1400;
   const backgroundWidth = 830;
+  const backgroundPostionHeight = 60;
+  const backgroundPostionWidth = 60;
   const tableId = "A";
   const rows = Array.from({ length: backgroundWidth / width }, (_, i) => i + 1);
   const columns = Array.from(
@@ -33,6 +35,8 @@ const Grid = () => {
       backgroundImage={backgroundImage}
       backgroundHeight={backgroundHeight}
       backgroundWidth={backgroundWidth}
+      backgroundPostionHeight={backgroundPostionHeight}
+      backgroundPostionWidth={backgroundPostionWidth}
       width={width}
       height={height}
     />
