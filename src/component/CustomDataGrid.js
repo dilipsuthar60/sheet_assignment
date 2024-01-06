@@ -7,6 +7,8 @@ const CustomDataGrid = ({
   columns,
   jsonData,
   backgroundImage,
+  backgroundHeight,
+  backgroundWidth,
   height,
   width,
 }) => {
@@ -56,10 +58,19 @@ const CustomDataGrid = ({
   useEffect(() => {}, []);
 
   return (
-    <div className={`custom-data-grid`}>
+    <div
+      className={`custom-data-grid ${
+        backgroundImage ? "background-image" : ""
+      }`}
+      style={{
+        backgroundImage: `url(${backgroundImage})`,
+        backgroundSize: `${backgroundHeight}px  ${backgroundWidth}px`,
+        backgroundPosition: `${width}px  ${height}px`,
+      }}
+    >
       <div className="table-header">
         <div
-          style={{ minHeight: height, minWidth: width }}
+          style={{ minHeight: `${height}px`, minWidth: `${width}px` }}
           className="table-header-cell table-id"
         >
           {currentActiveCell ? currentActiveCell : "$"}
@@ -68,20 +79,17 @@ const CustomDataGrid = ({
           <div
             key={column}
             className="table-header-cell"
-            style={{ minHeight: height, minWidth: width }}
+            style={{ minHeight: `${height}px`, minWidth: `${width}px` }}
           >
             {column}
           </div>
         ))}
       </div>
-      <div
-        className={`table-body ${backgroundImage ? "background-image" : ""}`}
-        style={{ backgroundImage: `url(${backgroundImage})` }}
-      >
+      <div className="table-body">
         {rows.map((row, index) => (
           <div key={row + index} className="table-row">
             <div
-              style={{ minHeight: height, minWidth: width }}
+              style={{ minHeight: `${height}px`, minWidth: `${width}px` }}
               className="table-header-cell row-number"
             >
               {row}

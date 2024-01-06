@@ -50,8 +50,7 @@ body{
 
 .background-image {
   position: absolute;
-  background-size: contain;
-  background-position: center; 
+  background-repeat:no-repeat;
 }
 
 .tooltip-text {
