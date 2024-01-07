@@ -16,9 +16,7 @@ const Grid = () => {
   };
 
   useEffect(() => {
-    if (cellsIds.length > 0) {
-      console.log("selected cells ids", cellsIds);
-    }
+    console.log("selected cells ids", cellsIds);
   }, [cellsIds]);
 
   const updateData = [
