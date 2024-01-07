@@ -13,6 +13,8 @@ const CustomDataGrid = ({
   backgroundPostionHeight,
   height,
   width,
+  setCellsIds,
+  updateData,
 }) => {
   const [selectedCells, setSelectedCells] = useState([]);
   const [tooltipContent, setTooltipContent] = useState("");
@@ -39,11 +41,11 @@ const CustomDataGrid = ({
     const present = selectedCells.includes(cellId);
     if (!present) {
       setSelectedCells((oldCellIds) => [...oldCellIds, cellId]);
-      console.log("selected cells ids", [...selectedCells, cellId]);
+      setCellsIds([...selectedCells, cellId]);
     } else {
       let newSelectedCells = selectedCells.filter((item) => item !== cellId);
       setSelectedCells(newSelectedCells);
-      console.log("selected cells ids", newSelectedCells);
+      setCellsIds(newSelectedCells);
     }
   };
 
@@ -56,8 +58,9 @@ const CustomDataGrid = ({
       setTooltipContent("");
     }
   };
-
-  useEffect(() => {}, []);
+  useEffect(() => {
+    setData([...data, ...updateData]);
+  }, []);
 
   return (
     <div

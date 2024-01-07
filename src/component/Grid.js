@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import jsonData from "../data.js";
 import CustomDataGrid from "./CustomDataGrid.js";
 import backgroundimg from "../assets/back-ground.jpeg";
 
 const Grid = () => {
+  const [cellsIds, setCellsIds] = useState([]);
   const convertToTitle = (columnNumber) => {
     let ans = "";
     while (columnNumber > 0) {
@@ -13,6 +14,31 @@ const Grid = () => {
     }
     return ans;
   };
+
+  useEffect(() => {
+    if (cellsIds.length > 0) {
+      console.log("selected cells ids", cellsIds);
+    }
+  }, [cellsIds]);
+
+  const updateData = [
+    {
+      id: "A#01E",
+      type: "S",
+      color: "#FF0000",
+      content: "1",
+      highlight: "No",
+      property: "Updated1",
+    },
+    {
+      id: "A#01F",
+      type: "S",
+      color: "#FF00FF",
+      content: "2",
+      highlight: "No",
+      property: "Updated2",
+    },
+  ];
   const width = 60; // your custum width
   const height = 60; // your custum height
   const backgroundImage = backgroundimg;
@@ -39,6 +65,8 @@ const Grid = () => {
       backgroundPostionWidth={backgroundPostionWidth}
       width={width}
       height={height}
+      setCellsIds={setCellsIds}
+      updateData={updateData}
     />
   );
 };

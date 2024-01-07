@@ -21,7 +21,7 @@ const jsonData = [
     color: "#8E7CC3",
     content: null,
     highlight: "No",
-    property: "jhkj",
+    property: "",
   },
   {
     id: "A#01D",
