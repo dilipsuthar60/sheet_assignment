@@ -59,7 +59,14 @@ const CustomDataGrid = ({
     }
   };
   useEffect(() => {
-    setData([...data, ...updateData]);
+    setData((prevData) => {
+      return prevData.map((item) => {
+        const updatedItem = updateData.find(
+          (updated) => updated.id === item.id
+        );
+        return updatedItem || item;
+      });
+    });
   }, []);
 
   return (
